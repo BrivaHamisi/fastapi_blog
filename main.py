@@ -40,4 +40,4 @@ def get_post(post_id: int):
     for post in posts:
         if post["id"] == post_id:
             return post
-    return HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post not found")
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post not found")
