@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-23T00:00:00Z",
+  "title": "Design System: FastAPI Blog",
+  "extensions": {
+    "colorMeta": {
+      "stormfront-steel": {
+        "role": "primary",
+        "displayName": "Stormfront Steel",
+        "canonical": "#527c9f",
+        "tonalRamp": ["oklch(15% 0.02 240)", "oklch(26% 0.04 241)", "oklch(36% 0.055 241)", "oklch(46% 0.062 242)", "oklch(56% 0.065 242)", "oklch(70% 0.05 243)", "oklch(83% 0.035 244)", "oklch(94% 0.015 244)"]
+      },
+      "tide-link": {
+        "role": "primary",
+        "displayName": "Tide Link",
+        "canonical": "#428bca",
+        "tonalRamp": ["oklch(18% 0.05 255)", "oklch(30% 0.08 252)", "oklch(42% 0.1 250)", "oklch(52% 0.115 249)", "oklch(62% 0.12 248)", "oklch(74% 0.09 247)", "oklch(85% 0.055 246)", "oklch(94% 0.02 246)"]
+      },
+      "ember-danger": {
+        "role": "secondary",
+        "displayName": "Ember Danger",
+        "canonical": "#a85b5b",
+        "tonalRamp": ["oklch(18% 0.04 22)", "oklch(28% 0.065 23)", "oklch(38% 0.085 24)", "oklch(47% 0.098 25)", "oklch(56% 0.1 26)", "oklch(70% 0.08 27)", "oklch(83% 0.05 28)", "oklch(94% 0.02 29)"]
+      },
+      "moss-success": {
+        "role": "tertiary",
+        "displayName": "Moss Success",
+        "canonical": "#4a7c5d",
+        "tonalRamp": ["oklch(16% 0.03 155)", "oklch(26% 0.05 155)", "oklch(36% 0.062 156)", "oklch(45% 0.07 156)", "oklch(54% 0.072 157)", "oklch(69% 0.06 158)", "oklch(82% 0.04 159)", "oklch(93% 0.015 160)"]
+      },
+      "workshop-paper": {
+        "role": "neutral",
+        "displayName": "Workshop Paper",
+        "canonical": "#fafafa",
+        "tonalRamp": ["oklch(16% 0.005 260)", "oklch(27% 0.006 260)", "oklch(38% 0.007 260)", "oklch(49% 0.008 260)", "oklch(60% 0.008 260)", "oklch(73% 0.008 260)", "oklch(86% 0.007 260)", "oklch(97% 0.004 260)"]
+      }
+    },
+    "typographyMeta": {
+      "heading": { "displayName": "Heading", "purpose": "All h1-h6 and the navbar brand; Montserrat speaks." },
+      "body": { "displayName": "Body", "purpose": "Default UI text at 1rem/1.5; Nunito works." },
+      "article-body": { "displayName": "Article Body", "purpose": "Post content one step larger (1.25rem) with preserved line breaks." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 2px 4px rgba(15, 23, 42, 0.05)", "purpose": "Barely-there grounding for content-section surfaces at rest." },
+      { "name": "card-lift", "value": "0 4px 10px rgba(15, 23, 42, 0.1)", "purpose": "Hover response only; paired with border shift to Hairline Faint." },
+      { "name": "night-rest", "value": "0 1px 3px rgba(0, 0, 0, 0.3)", "purpose": "Dark-mode resting surfaces need stronger, tighter grounding." },
+      { "name": "night-lift", "value": "0 2px 8px rgba(0, 0, 0, 0.5)", "purpose": "Dark-mode hover lift; legible without glow." },
+      { "name": "avatar-ring", "value": "0 0 0 2px var(--color-bg-content)", "purpose": "Flat ring around circular avatars — a punched hole, not a drop shadow." }
+    ],
+    "motion": [
+      { "name": "ease-color", "value": "color 0.2s ease-in-out", "purpose": "Link, nav, and title color transitions." },
+      { "name": "ease-lift", "value": "box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease", "purpose": "Card hover lift response." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Top Navigation Rail",
+      "kind": "nav",
+      "refersTo": "navbar",
+      "description": "Fixed Stormfront Steel rail that survives both themes; Montserrat brand, Mist links.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">FastAPI Blog</a><div class=\"ds-nav-right\"><a class=\"ds-nav-link ds-nav-active\" href=\"#\">Home</a><a class=\"ds-btn ds-btn-paper\" href=\"#\">Register</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; background: var(--color-steel, #527c9f); padding: 0.75rem 1.5rem; font-family: 'Nunito', system-ui, sans-serif; } .ds-nav-brand { color: #fff; font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; font-size: 1.25rem; text-decoration: none; } .ds-nav-right { display: flex; align-items: center; gap: 1rem; } .ds-nav-link { color: var(--color-nav-link, #cbd5db); text-decoration: none; transition: color 0.2s ease-in-out; } .ds-nav-link:hover, .ds-nav-link:focus { color: #fff; } .ds-nav-active { font-weight: 600; } .ds-btn-paper { background: #fff; color: #212529; border: 1px solid #fff; border-radius: 0.375rem; padding: 0.375rem 0.75rem; text-decoration: none; transition: background 0.15s ease; } .ds-btn-paper:hover { background: #e2e6ea; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid Stormfront Steel fill; deepens on press. The workshop's one loud voice.",
+      "html": "<button class=\"ds-btn-primary\">New Post</button>",
+      "css": ".ds-btn-primary { background: var(--color-steel, #527c9f); color: #fff; border: 1px solid var(--color-steel, #527c9f); border-radius: 0.375rem; padding: 0.375rem 0.75rem; font-family: 'Nunito', system-ui, sans-serif; font-size: 1rem; cursor: pointer; transition: background 0.15s ease, border-color 0.15s ease; } .ds-btn-primary:hover { background: #466a87; border-color: #3f6179; } .ds-btn-primary:active { background: #3f6179; } .ds-btn-primary:focus-visible { outline: 2px solid #428bca; outline-offset: 2px; }"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-outline-danger",
+      "description": "Dusty ember outline for destructive actions; fills deeper brick on press.",
+      "html": "<button class=\"ds-btn-danger\">Delete Post</button>",
+      "css": ".ds-btn-danger { background: transparent; color: var(--color-danger, #a85b5b); border: 1px solid var(--color-danger, #a85b5b); border-radius: 0.375rem; padding: 0.375rem 0.75rem; font-family: 'Nunito', system-ui, sans-serif; font-size: 1rem; cursor: pointer; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease; } .ds-btn-danger:hover { background: #924e4e; color: #fff; border-color: #874848; } .ds-btn-danger:focus-visible { outline: 2px solid #428bca; outline-offset: 2px; }"
+    },
+    {
+      "name": "Article Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Signature component: ringed round avatar, hairline metadata strip, hover-to-Tide title, pre-line body. Flat at rest, lifts on touch.",
+      "html": "<article class=\"ds-article\"><img class=\"ds-avatar\" src=\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23b8c9d9'/%3E%3Ccircle cx='32' cy='25' r='11' fill='%23527c9f'/%3E%3Cpath d='M10 58a22 17 0 0 1 44 0z' fill='%23527c9f'/%3E%3C/svg%3E\" alt=\"Author avatar\" width=\"64\" height=\"64\"><div class=\"ds-article-body\"><div class=\"ds-meta\"><a class=\"ds-author\" href=\"#\">Corey Schafer</a><small class=\"ds-date\">April 20, 2025</small></div><h2 class=\"ds-title\"><a href=\"#\">FastAPI is Awesome</a></h2><p class=\"ds-excerpt\">This framework is really easy to use and super fast.</p></div></article>",
+      "css": ".ds-article { display: flex; align-items: flex-start; gap: 1.5rem; background: var(--color-bg-content, #ffffff); color: var(--color-text-primary, #333333); border: 1px solid var(--color-border, #dddddd); border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05); padding: 1rem 1.5rem; font-family: 'Nunito', system-ui, sans-serif; transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease; } .ds-article:hover { box-shadow: 0 4px 10px rgba(15, 23, 42, 0.1); transform: translateY(-1px); border-color: var(--color-border-light, #e3e3e3); } .ds-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--color-border-light, #e3e3e3); box-shadow: 0 0 0 2px var(--color-bg-content, #ffffff); } .ds-article-body { flex-grow: 1; min-width: 0; } .ds-meta { display: flex; align-items: baseline; gap: 0.5rem; padding-bottom: 0.25rem; border-bottom: 1px solid var(--color-border-light, #e3e3e3); margin-bottom: 0.5rem; } .ds-author { color: inherit; text-decoration: none; transition: color 0.2s ease-in-out; } .ds-author:hover { color: var(--color-text-heading, #444444); } .ds-date { color: #6c757d; } .ds-title { margin: 0 0 0.5rem; font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; font-size: 1.75rem; line-height: 1.2; } .ds-title a { color: var(--color-text-heading, #444444); text-decoration: none; transition: color 0.2s ease-in-out; } .ds-title a:hover { color: #428bca; } .ds-excerpt { margin: 0; font-size: 1.25rem; white-space: pre-line; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Bootstrap-style field on Bench White with hairline border and global focus ring.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Post title\">",
+      "css": ".ds-input { width: 100%; max-width: 320px; background: var(--color-bg-content, #ffffff); color: var(--color-text-primary, #333333); border: 1px solid var(--color-border, #dddddd); border-radius: 0.375rem; padding: 0.375rem 0.75rem; font-family: 'Nunito', system-ui, sans-serif; font-size: 1rem; transition: border-color 0.15s ease; } .ds-input::placeholder { color: #6c757d; } .ds-input:focus { outline: none; border-color: #9ec5db; } .ds-input:focus-visible { outline: 2px solid #428bca; outline-offset: 2px; }"
+    },
+    {
+      "name": "Sidebar Panel",
+      "kind": "custom",
+      "refersTo": "sidebar-panel",
+      "description": "Content-section container wrapping a list-group; the one-third companion column.",
+      "html": "<aside class=\"ds-panel\"><h3 class=\"ds-panel-title\">Our Sidebar</h3><p class=\"ds-panel-sub\">You can put any information here you'd like.</p><ul class=\"ds-list\"><li>Latest Posts</li><li>Announcements</li><li>Calendars</li><li>etc</li></ul></aside>",
+      "css": ".ds-panel { background: var(--color-bg-content, #ffffff); border: 1px solid var(--color-border, #dddddd); border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05); padding: 1rem 1.5rem; font-family: 'Nunito', system-ui, sans-serif; max-width: 320px; } .ds-panel-title { margin: 0 0 0.25rem; font-family: 'Montserrat', system-ui, sans-serif; font-weight: 500; font-size: 1.5rem; color: var(--color-text-heading, #444444); } .ds-panel-sub { margin: 0 0 0.75rem; color: #6c757d; } .ds-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--color-border, #dddddd); border-radius: 0.375rem; overflow: hidden; } .ds-list li { padding: 0.5rem 0.75rem; background: var(--color-bg-content, #ffffff); } .ds-list li + li { border-top: 1px solid var(--color-border, #dddddd); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Well-Kept Workshop",
+    "overview": "This is a public workshop where learning happens in the open: honest tools arranged on a tidy bench, zero pretension, everything built to be used. The visual system reads as calm and studious — closer to good documentation than to a product launch. A Bootstrap chassis is used without apology; the identity comes from two disciplined choices kept constant everywhere: the Stormfront Steel navigation rail and the Montserrat/Nunito type pairing.\n\nSurfaces are plain paper on a desk. Cards carry a hairline border and a whisper of shadow at rest, and depth appears only when the reader touches something — a lift on hover, never a permanent status symbol. Color is rationed like paint in a shop: one steel-blue voice owns structure and primary actions, semantic colors stay dusty rather than alarmed, and everything else is graphite ink on white paper. Dark mode simply moves the same workshop indoors: warmer-than-black surfaces, the steel rail unchanged.\n\nConfirmed anti-reference: no SaaS launch gloss. No gradient hero banners, glow shadows, or glassmorphism — this is a working bench, not a pitch deck.",
+    "keyCharacteristics": [
+      "Fixed Stormfront Steel navbar that survives both themes unchanged",
+      "Two fonts only: Montserrat speaks (headings), Nunito works (body)",
+      "Flat-at-rest surfaces; shadow exclusively as interaction feedback",
+      "Hairline-bordered cards (0.5rem radius) on near-white paper (#fafafa)",
+      "Dusty semantic palette: ember red (#a85b5b), moss green (#4a7c5d) — never alarm colors",
+      "Round avatars ringed in the surface color they sit on",
+      "First-class light/dark/auto theming persisted across visits"
+    ],
+    "rules": [
+      { "name": "The One Steel Rule", "body": "Stormfront Steel is the only brand color, and it always does structural work — the rail, primary actions. Nothing else competes for it, and it never appears as passive decoration.", "section": "colors" },
+      { "name": "The Dusty Semantic Rule", "body": "Semantic colors arrive pre-muted: danger is #a85b5b, success is #4a7c5d. Reaching for saturated framework reds and greens breaks the workshop's voice.", "section": "colors" },
+      { "name": "The Two-Hand Rule", "body": "Montserrat speaks, Nunito works. No third font ever joins the bench — no monospace accents, no serif flourishes.", "section": "typography" },
+      { "name": "The Paper-on-a-Desk Rule", "body": "Resting surfaces are flat. Shadow exists only as a response to touch (hover, focus) — a shadow at rest with no interaction attached is a defect.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the navbar Stormfront Steel (#527c9f) in both themes — it is the system's one constant rail.",
+      "Do pair Montserrat headings with Nunito body text, loaded once from Google Fonts.",
+      "Do show a visible focus ring on every interactive element (outline: 2px solid #428bca; outline-offset: 2px).",
+      "Do render post bodies at 1.25rem with white-space: pre-line — author line breaks are content.",
+      "Do move dark mode indoors gradually: #1a1a1a page, #2d2d2d surfaces, #404040 hairlines."
+    ],
+    "donts": [
+      "Don't use gradient text, neon glow shadows, frosted glass, or animated hero banners — no SaaS launch gloss anywhere.",
+      "Don't reach for saturated framework reds/greens; semantic color stays dusty (danger #a85b5b, success #4a7c5d).",
+      "Don't put shadows on resting surfaces — lift is a response to touch, per the Paper-on-a-Desk Rule.",
+      "Don't introduce a third font, pill-shaped buttons, or pure black (#000) backgrounds."
+    ]
+  }
+}
